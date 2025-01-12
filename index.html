@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <audio id="player" preload="auto" loop autoplay>
+    <audio id="backgroundMusic" preload="auto" loop autoplay>
       <source src="https://github.com/longduongminh/code-love/blob/main/hen_gap_em_duoi_anh_trang.mp3?raw=true" type="audio/mp3">
     </audio>
     <!-- 星空html -->
@@ -36,5 +36,21 @@
     <script src="js/main.js"></script>
     <script src="js/particle.js"></script>
     <script src="js/universe.js"></script>
+
+    <script>
+      // Hàm để phát nhạc
+      function playMusic() {
+        const audio = document.getElementById('backgroundMusic');
+        audio.play().catch((error) => {
+            console.log("Không thể phát nhạc: ", error);
+        });
+      }
+
+      // Thêm sự kiện di chuyển chuột
+      var bodyElm = document.getElementsByTagName('body')[0];
+      if (bodyElm) {
+        bodyElm.addEventListener('click', playMusic);
+      }
+  </script>
   </body>
 </html>
